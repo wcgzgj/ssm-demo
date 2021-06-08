@@ -14,8 +14,6 @@
  Date: 26/04/2021 19:36:06
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for adminrole
@@ -49,9 +47,7 @@ CREATE TABLE `admins`  (
   `lastLoginTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '上次登录时间',
   `status` int NULL DEFAULT 1 COMMENT '0-离职 1-在职 2-休假',
   `isDel` int NULL DEFAULT 0 COMMENT '是否删除：1-已删除 0-未删除',
-  PRIMARY KEY (`adminId`) USING BTREE,
-  INDEX `roleId`(`roleId`) USING BTREE,
-  CONSTRAINT `admins_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `adminrole` (`roleId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  PRIMARY KEY (`adminId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -74,13 +70,7 @@ CREATE TABLE `game`  (
   `typeId` int NULL DEFAULT 2 COMMENT '比赛类型',
   `status` int NULL DEFAULT 0 COMMENT '0-正常 1-取消 2-延迟',
   `isDel` int NULL DEFAULT 0 COMMENT '是否删除：1-已删除 0-未删除',
-  PRIMARY KEY (`gameId`) USING BTREE,
-  INDEX `homeTeamId`(`homeTeamId`) USING BTREE,
-  INDEX `visitingTeamId`(`visitingTeamId`) USING BTREE,
-  INDEX `typeId`(`typeId`) USING BTREE,
-  CONSTRAINT `game_ibfk_1` FOREIGN KEY (`typeId`) REFERENCES `gametype` (`typeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `game_ibfk_2` FOREIGN KEY (`homeTeamId`) REFERENCES `team` (`teamId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `game_ibfk_3` FOREIGN KEY (`visitingTeamId`) REFERENCES `team` (`teamId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  PRIMARY KEY (`gameId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -130,9 +120,7 @@ CREATE TABLE `player`  (
   `teamId` int NULL DEFAULT NULL COMMENT '所属球队',
   `status` int NULL DEFAULT 1 COMMENT '状态：0-退役 1-在职',
   `isDel` int NULL DEFAULT 0 COMMENT '是否删除：1-已删除 0-未删除',
-  PRIMARY KEY (`playerId`) USING BTREE,
-  INDEX `teamId`(`teamId`) USING BTREE,
-  CONSTRAINT `player_ibfk_1` FOREIGN KEY (`teamId`) REFERENCES `team` (`teamId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  PRIMARY KEY (`playerId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -196,5 +184,3 @@ INSERT INTO `team` VALUES (1027, NULL, '国王', NULL, NULL, '加州萨科拉门
 INSERT INTO `team` VALUES (1028, NULL, '雷霆', NULL, NULL, '俄克拉荷马州俄克拉荷马城', '1967-01-01', NULL, 1, 0);
 INSERT INTO `team` VALUES (1029, NULL, '火箭', NULL, NULL, '德克萨斯州休斯顿', '1967-01-01', '5fc8272ac687497c8a74f17051b5da80.jpg', 1, 0);
 INSERT INTO `team` VALUES (1030, NULL, '森林狼', NULL, NULL, '明尼苏达州明尼阿波利斯', '1989-01-01', NULL, 1, 0);
-
-SET FOREIGN_KEY_CHECKS = 1;
