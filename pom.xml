@@ -142,17 +142,7 @@
                 <encoding>UTF-8</encoding>
             </configuration>
         </plugin>
-         <!-- 设置tomcat插件 -->
-        <plugin>
-            <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
-            <version>2.2</version>
-            <configuration>
-                <!-- 指定端口 --> <port>8088</port>
-                <!-- 请求路径 -->
-                <path>/</path> <uriEncoding>UTF-8</uriEncoding>
-            </configuration>
-        </plugin>
+
         <!--反向生成插件-->
         <plugin>
             <groupId>org.mybatis.generator</groupId>
