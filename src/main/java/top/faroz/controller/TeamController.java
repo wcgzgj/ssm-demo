@@ -2,7 +2,7 @@ package top.faroz.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.faroz.pojo.Player;
+import top.faroz.pojo.Team;
 import top.faroz.resp.CommonResp;
 import top.faroz.service.TeamService;
 
@@ -25,7 +25,7 @@ public class TeamController {
 
     @RequestMapping("/list")
     public CommonResp list() {
-        List<Player> teams = teamService.selectAll();
+        List<Team> teams = teamService.selectAll();
         CommonResp commonResp = new CommonResp();
         commonResp.setContent(teams);
         return commonResp;

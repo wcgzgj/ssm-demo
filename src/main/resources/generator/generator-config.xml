@@ -49,7 +49,7 @@
         </javaClientGenerator>
 
 
-        <table tableName="Team">
+        <table tableName="team">
             <property name="useActualColumnNames" value="true"/>
         </table>
         <!--<table tableName="Player">-->

@@ -1,7 +1,8 @@
 package top.faroz.service.impl;
 
 import org.springframework.stereotype.Service;
-import top.faroz.pojo.Player;
+import top.faroz.mapper.TeamMapper;
+import top.faroz.pojo.Team;
 import top.faroz.service.TeamService;
 
 import javax.annotation.Resource;
@@ -17,8 +18,8 @@ import java.util.List;
 @Service
 public class TeamServiceImpl implements TeamService {
 
-    // @Resource
-    // private TeamMapper teamMapper;
+    @Resource
+    private TeamMapper teamMapper;
 
     /**
      * 查询所有 team 信息
@@ -26,9 +27,8 @@ public class TeamServiceImpl implements TeamService {
      * @return
      */
     @Override
-    public List<Player> selectAll() {
-        // List<Team> teams = teamMapper.selectByExample(null);
-        // return teams;
-        return null;
+    public List<Team> selectAll() {
+        List<Team> teams = teamMapper.selectByExample(null);
+        return teams;
     }
 }
