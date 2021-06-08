@@ -52,21 +52,21 @@
         <table tableName="Team">
             <property name="useActualColumnNames" value="true"/>
         </table>
-        <table tableName="Player">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
-        <table tableName="game">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
-        <table tableName="GameType">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
-        <table tableName="Admins">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
-        <table tableName="AdminRole">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
+        <!--<table tableName="Player">-->
+        <!--    <property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="game">-->
+        <!--    <property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="GameType">-->
+        <!--    <property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="Admins">-->
+        <!--    <property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="AdminRole">-->
+        <!--    <property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
 
     </context>
 </generatorConfiguration>
