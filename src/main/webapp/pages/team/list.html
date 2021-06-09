@@ -186,7 +186,8 @@
 		if(pageSize!=null&&$("select[name='pageSize']").val()!=null){
 			$("select[name='pageSize']").val(pageSize);
 		}
-		//alert($("#myForm").serialize())
+
+
 		$.ajax({
 			type: "GET",
 			url: "/team/list",

@@ -37,5 +37,4 @@ public class TeamQueryResp {
 
     private Integer isdel;
 
-
 }

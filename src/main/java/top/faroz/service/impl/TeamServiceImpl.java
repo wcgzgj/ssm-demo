@@ -66,7 +66,7 @@ public class TeamServiceImpl implements TeamService {
             criteria.andCreatetimeBetween(req.getBeginDate(),req.getEndDate());
         }
         // 按赛区查询，如果是 -1 的话，说明没有选赛区
-        if (req.getArea()>=0) {
+        if (req.getArea()!=null && req.getArea()>=0) {
             criteria.andAreaEqualTo(req.getArea());
         }
 
