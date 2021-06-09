@@ -2,7 +2,6 @@ package top.faroz.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.faroz.mapper.PlayerMapper;
 import top.faroz.pojo.Player;
 import top.faroz.resp.CommonResp;
 import top.faroz.service.PlayerService;
@@ -29,7 +28,6 @@ public class PlayerController {
         List<Player> players = playerService.selectAll();
         CommonResp commonResp = new CommonResp();
         commonResp.setContent(players);
-
         return commonResp;
     }
 

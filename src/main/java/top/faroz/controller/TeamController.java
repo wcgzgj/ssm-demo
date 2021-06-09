@@ -1,9 +1,15 @@
 package top.faroz.controller;
 
+import com.github.pagehelper.util.StringUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.faroz.mapper.TeamMapper;
 import top.faroz.pojo.Team;
+import top.faroz.pojo.TeamExample;
+import top.faroz.req.TeamQueryReq;
 import top.faroz.resp.CommonResp;
+import top.faroz.resp.PageResp;
+import top.faroz.resp.TeamQueryResp;
 import top.faroz.service.TeamService;
 
 import javax.annotation.Resource;
@@ -24,10 +30,13 @@ public class TeamController {
     private TeamService teamService;
 
     @RequestMapping("/list")
-    public CommonResp list() {
-        List<Team> teams = teamService.selectAll();
+    public CommonResp list(TeamQueryReq req) {
+
         CommonResp commonResp = new CommonResp();
-        commonResp.setContent(teams);
+        PageResp<TeamQueryResp> pageResp = teamService.list(req);
+        commonResp.setContent(pageResp);
+
+
         return commonResp;
     }
 

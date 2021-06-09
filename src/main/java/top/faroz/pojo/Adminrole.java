@@ -5,6 +5,7 @@ public class Adminrole {
 
     private String roleName;
 
+
     public Integer getRoleId() {
         return roleId;
     }
@@ -19,5 +20,13 @@ public class Adminrole {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName == null ? null : roleName.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Adminrole{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                '}';
     }
 }
